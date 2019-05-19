@@ -153,8 +153,41 @@
             </div>
         </div>
     </div>
-</body>
-</html>
 
-    
-    
+    <script>
+        $("#nf-btn").on("click", function (event) {
+            event.preventDefault();
+
+            console.log("button was clicked");
+            let newFriend = {
+                name: $("#name").val().trim(),
+                photo: $("#photo").val().trim(),
+                scores: [
+                    $("#sel1").val(),
+                    $("#sel2").val(),
+                    $("#sel3").val(),
+                    $("#sel4").val(),
+                    $("#sel5").val(),
+                    $("#sel6").val(),
+                    $("#sel7").val(),
+                    $("#sel8").val(),
+                    $("#sel9").val(),
+                    $("#sel10").val(),
+                    
+                ]
+            };
+            console.log(newFriend);
+
+            // Question: What does this code do??
+            $.post("/api/friends", newFriend)
+            .then(function (data) {
+                console.log(data);
+                alert("Adding friend...");
+            });
+
+        });
+    </script>
+
+</body>
+
+</html>

@@ -4,26 +4,6 @@ app.get("/api/friends", function(req, res) {
 });
 
 
-$("#add-btn").on("click", function(event) {
-    event.preventDefault();
-    
-    var newCharacter = {
-        name: $("#name").val().trim(),
-        role: $("#role").val().trim(),
-        age: $("#age").val().trim(),
-        forcePoints: $("#force-points").val().trim()
-    };
-    
-    // Question: What does this code do??
-    $.post("/api/characters", newCharacter)
-    .then(function(data) {
-        console.log(data);
-        alert("Adding character...");
-    });
-    
-});
-
-
 //POST for incoming survey data and compatability logic//
 app.post("/api/friends", function(req, res) {
     let newFriend = req.body;
