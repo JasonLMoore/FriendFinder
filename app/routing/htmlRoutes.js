@@ -1,9 +1,12 @@
-//generic catch all to direct to home page//
-app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "home.html"));
-});
+const path = require("path");
 
-//direct to survey page//
-app.get("/survey", function(req, res) {
-    res.sendFile(path.join(__dirname, "survey.html"));
-});
+module.exports = function (app) {
+    app.get("/", function (req, res) {
+        res.sendFile(path.join(__dirname, '../public/home.html'));
+    });
+
+    //direct to survey page//
+    app.get("/survey", function (req, res) {
+        res.sendFile(path.join(__dirname, '../public/survey.html'));
+    });
+}
