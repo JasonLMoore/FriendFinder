@@ -182,13 +182,13 @@
                 ]
             };
             console.log(newFriend);
-
+            let currentURL = window.location.origin;
             
-            $.post("/api/friends", newFriend)
-                .then(function (data) {
+            $.post(currentURL + "/api/friends", newFriend)
+                .then(function(data) {
                     console.log(data);
                     alert("Adding friend...");
-                });
+            });
 
         });
     </script>
