@@ -3,7 +3,7 @@ friendsData = require('../data/friends.js');
 module.exports = function(app) {
     //Displays all friends//
     app.get("/api/friends", function (req, res) {
-        res.json(friends);
+        res.json(friendData);
     });
 
 
@@ -16,8 +16,8 @@ module.exports = function(app) {
 
         console.log(newFriend);
 
-        friendsData.push(newFriend);
-
-        res.json(friends);
+        //friendsData.push(newFriend);
+        console.log(friendsData);
+        //res.json(friends);
     });
 }
